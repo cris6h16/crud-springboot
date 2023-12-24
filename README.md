@@ -1,3 +1,52 @@
+This CRUD use PostgreSQL, you need:
+
+- [x] Log with `postgres` user (superuser privileges)
+- [x] Create a Database named: `test_required`
+
+```postgresql
+CREATE DATABASE test_required
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = 100
+    IS_TEMPLATE = False;
+```
+
+- [x] Into above database, create Schema named: `exercise1`
+
+```postgresql
+CREATE SCHEMA exercise1 AUTHORIZATION postgres;
+```
+
+- [x] create a user:
+    - username: `prueba`
+    - password: `prueba`
+
+```postgresql
+    CREATE ROLE prueba WITH
+    LOGIN
+    PASSWORD 'prueba'
+    NOSUPERUSER
+    NOCREATEDB
+    NOCREATEROLE
+    INHERIT
+    NOREPLICATION
+    CONNECTION LIMIT 5;
+```
+
+- [x] Grant privileges to user `prueba` on `exercise1` schema
+
+```postgresql
+GRANT CREATE ON SCHEMA exercise1 TO prueba;
+GRANT USAGE ON SCHEMA exercise1 TO prueba;
+```
+
+- [x] Test the CRUD ✔
+
+You can test the CRUD with the following commands//
+I'll use `curl` command in my **ubuntu terminal**, you can use **git bash** in Windows or adapt the commands to your
+CLI.
+
 ```bash
 ================================================== Validations test ==================================================
 
