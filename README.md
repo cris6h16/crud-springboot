@@ -96,3 +96,11 @@ curl -X DELETE http://localhost:8080/api/driver/1 && echo
 curl http://localhost:8080/api/driver/list && echo
 
 ```
+
+## EXERCISE RESOLVED
+Exercise 1: Java , spring framework:  
+Having the next table:   
+Table: `driver`    
+columns: `id`, `name`. `age`  
+
+Using Spring framework create a RESTful api that exposes a CRUD for the table Driver. Implement all the best practices you know.
